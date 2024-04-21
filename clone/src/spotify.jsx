@@ -3,7 +3,9 @@ export const authEndpoint = "https://accounts.spotify.com/authorize";
 // Replace with your app's client ID, redirect URI and desired scopes
 
  const clientId = "06a195ae6dfc4af0bafee23fe9b944b0";
+ 
 // for getting the client id i firsst made the Spotify Developer account. and then Create an App after that i get this id which is basically shown in the url
+
 
 
 const redirectUri = "http://localhost:5174/";
