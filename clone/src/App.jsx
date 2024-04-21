@@ -1,12 +1,13 @@
-
-import './App.css'
+import Login from './login.jsx';
+import './App.css';
+ 
 
 function App() {
  
   return (
-    <>
-      <h2>Here we made a Spotify Clone</h2>
-    </>
+    <div className='app'>
+       <Login/>
+    </div>
   )
 }
 
