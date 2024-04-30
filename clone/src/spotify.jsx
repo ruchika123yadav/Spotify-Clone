@@ -19,7 +19,7 @@ const scopes = [
 ];
 // In a real application, you might use these scopes when working with the Spotify API to request specific permissions or access certain features of the user's Spotify account. 
 
-// this will get the access token from the response
+// this will get the access token from the response(URL)
 export const getTokenFromUrl = () => {
   return window.location.hash
     .substring(1)
@@ -31,6 +31,7 @@ export const getTokenFromUrl = () => {
       return initial;
     }, {});
 } 
-
+ 
 export const loginUrl=`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}&response_type=token&show_dialog=true`;
 //  here token is just like a string which represents your authentication
+// The loginUrl combines these elements to create a URL that users can click to authorize your app with the specified permissions.
