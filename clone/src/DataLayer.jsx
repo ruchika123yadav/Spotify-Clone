@@ -5,7 +5,7 @@ export const DataLayerContext = createContext();
 export const DataLayer = ({
      reducer
     , initialState
-    , children //children is gnerally what is wrap inside the Stateprovider in index.js->App
+    , children //children is gnerally what is wrap inside the Stateprovider in main.jsx->App
  }) => (
   <DataLayerContext.Provider value={useReducer(reducer, initialState)}>
     {children}

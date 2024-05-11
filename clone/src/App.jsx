@@ -1,5 +1,6 @@
 import Login from './login.jsx';
 import './App.css';
+import './index.css';
 import React, { useEffect, useState } from 'react';
 import { getTokenFromUrl } from './spotify.jsx';
 import SpotifyWebApi from  "spotify-web-api-js"; // this is a package that we installed to interact with spotify 
@@ -13,8 +14,8 @@ const spotify = new SpotifyWebApi(); // this is an instance of the spotify web a
 
 function App() {
 
-  const [token, setToken] = useState(null)
-  const [{user},dispatch] = useDataLayerValue();//we can pulled out any information of datalyer here
+  // const [token, setToken] = useState(null)
+  const [{user,token},dispatch] = useDataLayerValue();//we can pulled out any information of datalyer here
 
   // Run code based on a given condition 
   useEffect(() => {
@@ -25,10 +26,14 @@ function App() {
     const _token = hash.access_token; // this will get the access token from the response
 
     if (_token) {
-      setToken(_token);
+      // setToken(_token);
+      dispatch({
+         type :"SET_TOKEN",
+         token:_token,
+      });
       spotify.setAccessToken(_token); // this will give the access token to the spotify instance and authorize spotify api to take call on behalf of the user
       spotify.getMe().then(user => {
-        // console.log('person: ', user);
+        console.log('person: ', user);
              dispatch( { //pop in the user in the data layer
               type:"SET_USER",
               user: user,
@@ -40,16 +45,15 @@ function App() {
 
   }, [])
   console.log('person: ', user);   // to just test the datalyer that we actually pull the user data or not
+  console.log("💀",token);
 
 
   return (
     <div className='app'>
       {
-        token ? (
-          <Player/>
-        ) : (
-          <Login/>
-        )
+        token ?
+         (<Player spotify={spotify}/>):
+        (<Login/>)
       }
     </div>
   )
