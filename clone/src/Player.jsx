@@ -7,7 +7,7 @@ import Footer from './footer.jsx';
 const Player = ({spotify}) => {
   return (
     <div className='player'>
-      Player
+       
       <div className="player-body">
         <SideBar/>
         <Body/>
