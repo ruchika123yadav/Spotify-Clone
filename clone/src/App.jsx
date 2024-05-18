@@ -42,6 +42,13 @@ function App() {
       });
     }
 
+    spotify.getUserPlaylists().then((playlists)=>{
+      dispatch({
+        type:"SET_PLAYLISTS",
+        playlists:playlists,
+      })
+    })
+
 
   }, [])
   console.log('person: ', user);   // to just test the datalyer that we actually pull the user data or not

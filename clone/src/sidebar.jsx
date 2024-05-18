@@ -4,7 +4,13 @@ import SidebarOption from './sidebarOption.jsx';
 import HomeIcon from '@mui/icons-material/Home';
 import SearchIcon from '@mui/icons-material/Search';
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
+import { useDataLayerValue } from './DataLayer.jsx';
+
 function sidebar() {
+
+  // const [{user,token},dispatch] = useDataLayerValue();//we can pulled out any information of datalyer here
+const [{playlists},dispatch]=useDataLayerValue();
+// in this we are ot getting the entire state by using the datalayer we just pulled the data of playlists it decrease overhead
   return (
     <div className='sidebar'>
        <img className='sidebar-logo'
@@ -18,9 +24,14 @@ function sidebar() {
       <br />
       <strong className='sidebar-title'>PLAYLISTS</strong>
          <hr /> 
-         <SidebarOption   title="Hip Hop"/>
+         {playlists?.items?.map(playlist=>(
+          <SidebarOption   title={playlist.name}/>
+
+         ))}
+
+         {/* <SidebarOption   title="Hip Hop"/>
       <SidebarOption   title="Punjabi"/>
-      <SidebarOption   title="BollyWood"/>
+      <SidebarOption   title="BollyWood"/> */}
 
 
      

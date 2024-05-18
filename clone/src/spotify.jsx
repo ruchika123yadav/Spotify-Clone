@@ -11,11 +11,23 @@ const redirectUri = "http://localhost:5174/";
 
 
 const scopes = [
-  "user-read-currently-playing",
-  "user-read-recently-played",
-  "user-read-playback-state",
-  "user-top-read",
+  "user-read-playback-position",
+  "user-read-email",
+  "user-library-modify",
+  "playlist-modify-public",
+  "ugc-image-upload",
+  "user-follow-modify",
   "user-modify-playback-state",
+  "user-read-recently-played",
+  "user-read-private",
+  "user-library-read",
+  "user-top-read",
+  "playlist-modify-private",
+  "user-follow-read",
+  "user-read-playback-state",
+  "user-read-currently-playing",
+  "playlist-read-private",
+  "playlist-read-collaborative",
 ];
 // In a real application, you might use these scopes when working with the Spotify API to request specific permissions or access certain features of the user's Spotify account. 
 
