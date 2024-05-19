@@ -5,7 +5,8 @@ export const initialState = {
     playing: false,
     item: null,
     // remove the value of token after debugging because we don't want to authenticate directly without getting token from spotify
-    // token: 'BQBQeTDxxr4iUG5CQdjkPPpGXPDpPWXFZ5jHThJlbz2shGr1TvRfng6eTkFFhbHqHMT9a0oAERxSpVwLk2xNii248wg3LP9ba-7pWjNQx4z-N2N3A6kI5wbXMoRRl8v-j5__9mkICw3CnFPgogDRAtPXIjgW7bHlqEIMVVC0Lkos9WBQuui_HcLBYCCWM1lRRUkNjClEzpqEkupHZE9V',
+    token: 'BQBQeTDxxr4iUG5CQdjkPPpGXPDpPWXFZ5jHThJlbz2shGr1TvRfng6eTkFFhbHqHMT9a0oAERxSpVwLk2xNii248wg3LP9ba-7pWjNQx4z-N2N3A6kI5wbXMoRRl8v-j5__9mkICw3CnFPgogDRAtPXIjgW7bHlqEIMVVC0Lkos9WBQuui_HcLBYCCWM1lRRUkNjClEzpqEkupHZE9V',
+    // hame directly token mil rha tha to hamre playlist show nhi hoo rhi thi kyuki phele hame soptify ko apne app ko authenticate karana hoga
     // Playlists:null,
   };
 
