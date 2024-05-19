@@ -1,3 +1,8 @@
+body::-webkit-scrollbar{
+ display: none;
+ /* display: none; property-value pair is used to completely hide an element from the web page. */
+}
+
 * {
  margin: 0;
 }
