@@ -14,6 +14,13 @@
 
 .footer-left {
     flex: 0.3;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    color: white;
+    max-width: 300px;
+
+
 }
 
 .footer-center {
@@ -28,4 +35,40 @@
 
 .footer-right {
     flex: 0.3;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   color: white;
+     
+    
+}
+
+.footer-albumPhoto{
+    height: 60px;
+    width: 60px;
+    margin-right: 20px;
+    object-fit: contain;
+}
+
+/* giving green color to next and previous icon */
+.footer-green{
+    color: red;
+}
+
+.footer__songInfo >h4{
+    margin-bottom: 5px;
+}
+.footer__songInfo>p{
+    font-size: 13px;
+}
+
+/* giving hoover effect to the icons */
+.footer-icon:hover,.footer-green:hover{
+    transition: trnasform 0.2 ease-in-out;
+    transform: scale(1.2) !important;
+}
+/* giving slider a green color */
+.footer-right * .MuiSlider-root{
+      color: red;
+      
 }

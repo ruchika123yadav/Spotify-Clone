@@ -10,7 +10,7 @@ const Player = ({spotify}) => {
        
       <div className="player-body">
         <SideBar/>
-        <Body/>
+        <Body spotify={spotify}/>
  {/* side Baar  */}
  {/* Body */}
  

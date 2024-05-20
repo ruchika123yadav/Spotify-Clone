@@ -1,3 +1,4 @@
+
 import React from 'react';
 import './footer.css';
 import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
@@ -5,32 +6,38 @@ import SkipNextIcon from '@mui/icons-material/SkipNext';
 import ShuffleIcon from '@mui/icons-material/Shuffle';
 import RepeatIcon from '@mui/icons-material/Repeat';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
-import {Grid,Slider} from '@mui/material';
+import { Grid, Slider } from '@mui/material';
 import PlaylistPlayIcon from '@mui/icons-material/PlaylistPlay';
 import VolumeDownIcon from '@mui/icons-material/VolumeDown';
 
-function footer() {
+function Footer() {
   return (
     <div className='footer'>
+      {/* ALBUM AND SONG DETAILS */}
+      <div className="footer-left">
+        {/* <p>ALBUM</p> */}
+        <img className='footer-albumPhoto'
+        src='./src/ruchi.jpg'
+         alt="" />
+        {/* SONG INFO */}
+        <div className="footer__songInfo">
+            <h4>NO LIE</h4>
+            <p>playing...</p>
+          </div>
+      </div>
 
-      {/* we use the spec box to equally space them out */}
-        <div className="footer-left">
-          {/* ALBUM AND SONG DETAILS */}
-          <p>ALNUM</p>
-        </div>
+      {/* PLAYER CONTROLS */}
+      <div className="footer-center">
+        <ShuffleIcon className='footer-green'/>
+        <SkipPreviousIcon className='footer-icon'/>
+        <PlayCircleOutlineIcon fontSize='large' className='footer-icon'/>
+        <SkipNextIcon className='footer-icon'/>
+        <RepeatIcon className='footer-green'/>
+      </div>
 
-        <div className="footer-center">
-           {/* PLAYER CONTROL */}
-           <ShuffleIcon className='footer-greeen'/>
-          <SkipPreviousIcon className='footer-icon'/>
-           <PlayCircleOutlineIcon fontSize='large' className='footer-icon'/>
-           <SkipNextIcon className='footer-icon'/>
-           <RepeatIcon className='fotter-green'/>
-        </div>
-
-        <div className="fotter-right">
-           {/* VOLUME CONTROL */}
-           <Grid container spacing={2}>
+      {/* VOLUME CONTROL */}
+      <div className="footer-right">
+        <Grid container spacing={2} alignItems="center">
           <Grid item>
             <PlaylistPlayIcon />
           </Grid>
@@ -38,13 +45,18 @@ function footer() {
             <VolumeDownIcon />
           </Grid>
           <Grid item xs>
-           <Slider/>
+            {/* Here is the modified Slider component */}
+            <Slider
+              aria-label="Volume"
+              defaultValue={30}  // You can set the default value as needed
+              valueLabelDisplay="auto"
+            />
           </Grid>
         </Grid>
-        </div>
-
+      </div>
     </div>
   )
 }
 
-export default footer
+export default Footer;
+
