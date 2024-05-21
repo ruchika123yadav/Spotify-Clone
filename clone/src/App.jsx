@@ -49,13 +49,19 @@ function App() {
       })
     })
 
+    // get the id from our spotify account in the url of playlist
+         spotify.getPlaylist('0Y44bc2Fd2IfbhqSPnNlTC').then(response=>{
+          dispatch({
+            type:"SET_DISCOVER_WEEKLY",
+            discover_weekly:response,
+          })
+         })
 
   }, [])
   console.log('person: ', user);   // to just test the datalyer that we actually pull the user data or not
   console.log("💀",token);
 
-
-  return (
+   return (
     <div className='app'>
       {
         token ?
